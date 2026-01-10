@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Mono, Inter } from 'next/font/google';
 
-import { ThemeProvider } from '@/components/providers/theme-provider';
-
 import favicon from '../../public/favicon.ico';
 import './globals.css';
+
+import { Providers } from '@/components/providers';
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -18,7 +18,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-	// metadataBase: new URL(process.env.BASE_URL || ''),
+	metadataBase: new URL(process.env.BASE_URL || ''),
 	icons: {
 		icon: favicon.src,
 	},
@@ -36,7 +36,22 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${inter.variable} ${plexMono.variable} antialiased`}>
-				<ThemeProvider>{children}</ThemeProvider>
+				<Providers>
+					{/* <header>
+								<SignedOut>
+									<SignInButton />
+									<SignUpButton>
+										<button className="h-10 cursor-pointer rounded-full bg-[#6c47ff] px-4 font-medium text-sm text-white sm:h-12 sm:px-5 sm:text-base">
+											Sign Up
+										</button>
+									</SignUpButton>
+								</SignedOut>
+								<SignedIn>
+									<UserButton />
+								</SignedIn>
+							</header> */}
+					{children}
+				</Providers>
 			</body>
 		</html>
 	);

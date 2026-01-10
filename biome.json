@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+		"includes": ["**", "!node_modules", "!.next", "!dist", "!build", "convex"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -29,7 +29,8 @@
 				"useSemanticElements": "off",
 				"useKeyWithClickEvents": "off",
 				"useAriaPropsForRole": "off",
-				"noRedundantRoles": "off"
+				"noRedundantRoles": "off",
+				"useButtonType": "off"
 			},
 			"style": {
 				"useImportType": "warn"
@@ -71,11 +72,12 @@
 							":BLANK_LINE:",
 							["react", "next", "next/**"],
 							":BLANK_LINE:",
-							":NODE:",
+							["@*/**", "!@/**", ":PACKAGE:", ":NODE:"],
 							":BLANK_LINE:",
 							"@/**",
 							":BLANK_LINE:",
-							["./**", "../**"]
+							["./**", "../**", "**"],
+							":BLANK_LINE:"
 						]
 					}
 				}
