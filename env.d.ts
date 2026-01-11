@@ -23,6 +23,9 @@ declare global {
 			// Firecrawl
 			FIRECRAWL_API_KEY: string;
 
+			// Sentry
+			SENTRY_AUTH_TOKEN: string;
+
 			// Node
 			NODE_ENV: 'development' | 'production' | 'test';
 		}
