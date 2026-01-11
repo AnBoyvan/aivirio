@@ -13,8 +13,8 @@ import {
 import { ConvexProviderWithClerk } from 'convex/react-clerk';
 import { ThemeProvider } from 'next-themes';
 
-import { AuthLoadingView } from '@/features/components/auth-loading-view';
-import { UnauthenticatedView } from '@/features/components/unauthenticated-view';
+import { AuthLoadingView } from '@/features/auth/components/auth-loading-view';
+import { UnauthenticatedView } from '@/features/auth/components/unauthenticated-view';
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 

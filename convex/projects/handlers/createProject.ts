@@ -1,18 +1,22 @@
-import type { MutationCtx } from '../../_generated/server';
+import { v } from 'convex/values';
 
-type Args = {
-	name: string;
-};
+import { verifyAuth } from '@/convex/auth';
 
-export const createProject = async (ctx: MutationCtx, args: Args) => {
-	const identity = await ctx.auth.getUserIdentity();
+import { mutation } from '../../_generated/server';
 
-	if (!identity) {
-		throw new Error('Unauthorized');
-	}
+export const createProject = mutation({
+	args: {
+		name: v.string(),
+	},
+	handler: async (ctx, args) => {
+		const identity = await verifyAuth(ctx);
 
-	await ctx.db.insert('projects', {
-		name: args.name,
-		ownerId: identity.subject,
-	});
-};
+		const projectId = await ctx.db.insert('projects', {
+			name: args.name,
+			ownerId: identity.subject,
+			updatedAt: Date.now(),
+		});
+
+		return projectId;
+	},
+});
