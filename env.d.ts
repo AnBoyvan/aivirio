@@ -20,6 +20,9 @@ declare global {
 			// Anthropic
 			ANTHROPIC_API_KEY: sting;
 
+			// Firecrawl
+			FIRECRAWL_API_KEY: string;
+
 			// Node
 			NODE_ENV: 'development' | 'production' | 'test';
 		}
