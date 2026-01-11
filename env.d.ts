@@ -17,8 +17,8 @@ declare global {
 			CONVEX_DEPLOYMENT: string;
 			NEXT_PUBLIC_CONVEX_URL: string;
 
-			// OpenAI
-			// OPENAI_API_KEY: string;
+			// Anthropic
+			ANTHROPIC_API_KEY: sting;
 
 			// Node
 			NODE_ENV: 'development' | 'production' | 'test';
