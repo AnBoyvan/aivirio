@@ -11,8 +11,10 @@
 import type * as auth from "../auth.js";
 import type * as projects from "../projects.js";
 import type * as projects_handlers_createProject from "../projects/handlers/createProject.js";
+import type * as projects_handlers_getProjectById from "../projects/handlers/getProjectById.js";
 import type * as projects_handlers_getProjects from "../projects/handlers/getProjects.js";
 import type * as projects_handlers_getProjectsPartial from "../projects/handlers/getProjectsPartial.js";
+import type * as projects_handlers_renameProject from "../projects/handlers/renameProject.js";
 
 import type {
   ApiFromModules,
@@ -24,8 +26,10 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   projects: typeof projects;
   "projects/handlers/createProject": typeof projects_handlers_createProject;
+  "projects/handlers/getProjectById": typeof projects_handlers_getProjectById;
   "projects/handlers/getProjects": typeof projects_handlers_getProjects;
   "projects/handlers/getProjectsPartial": typeof projects_handlers_getProjectsPartial;
+  "projects/handlers/renameProject": typeof projects_handlers_renameProject;
 }>;
 
 /**

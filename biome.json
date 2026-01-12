@@ -30,7 +30,9 @@
 				"useKeyWithClickEvents": "off",
 				"useAriaPropsForRole": "off",
 				"noRedundantRoles": "off",
-				"useButtonType": "off"
+				"useButtonType": "off",
+				"noAutofocus": "off",
+				"noStaticElementInteractions": "off"
 			},
 			"style": {
 				"useImportType": "warn"

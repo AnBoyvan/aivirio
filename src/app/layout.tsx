@@ -36,7 +36,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${inter.variable} ${plexMono.variable} antialiased`}>
+			<body
+				className={`${inter.className} ${inter.variable} ${plexMono.variable} antialiased`}
+			>
 				<Providers>{children}</Providers>
 			</body>
 		</html>

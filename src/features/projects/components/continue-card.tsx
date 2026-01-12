@@ -21,7 +21,7 @@ export const ContinueCard = ({ data }: ContinueCardProps) => {
 				asChild
 				className="flex h-auto flex-col items-start justify-start gap-2 rounded-none border bg-background p-4"
 			>
-				<Link href={`/products/${data._id}`} className="group">
+				<Link href={`/projects/${data._id}`} className="group">
 					<div className="flex w-full items-center justify-between">
 						<div className="flex items-center gap-2 overflow-hidden">
 							{getProjectIcon({ project: data, size: 'sm' })}
