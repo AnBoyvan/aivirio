@@ -2,16 +2,22 @@ import { v } from 'convex/values';
 
 import { verifyAuth } from '@/convex/auth';
 
-import { query } from '../../_generated/server';
+import { query } from '../_generated/server';
 
-export const getProjectById = query({
+export const getFile = query({
 	args: {
-		id: v.id('projects'),
+		id: v.id('files'),
 	},
 	handler: async (ctx, args) => {
 		const identity = await verifyAuth(ctx);
 
-		const project = await ctx.db.get('projects', args.id);
+		const file = await ctx.db.get('files', args.id);
+
+		if (!file) {
+			throw new Error('File not found');
+		}
+
+		const project = await ctx.db.get('projects', file.projectId);
 
 		if (!project) {
 			throw new Error('Project not found');
@@ -21,6 +27,6 @@ export const getProjectById = query({
 			throw new Error('Unauthorized access to this project');
 		}
 
-		return project;
+		return file;
 	},
 });

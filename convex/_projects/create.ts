@@ -2,9 +2,9 @@ import { v } from 'convex/values';
 
 import { verifyAuth } from '@/convex/auth';
 
-import { mutation } from '../../_generated/server';
+import { mutation } from '../_generated/server';
 
-export const createProject = mutation({
+export const create = mutation({
 	args: {
 		name: v.string(),
 	},

@@ -2,12 +2,11 @@ import { v } from 'convex/values';
 
 import { verifyAuth } from '@/convex/auth';
 
-import { mutation } from '../../_generated/server';
+import { query } from '../_generated/server';
 
-export const renameProject = mutation({
+export const getById = query({
 	args: {
 		id: v.id('projects'),
-		name: v.string(),
 	},
 	handler: async (ctx, args) => {
 		const identity = await verifyAuth(ctx);
@@ -22,9 +21,6 @@ export const renameProject = mutation({
 			throw new Error('Unauthorized access to this project');
 		}
 
-		await ctx.db.patch('projects', args.id, {
-			name: args.name,
-			updatedAt: Date.now(),
-		});
+		return project;
 	},
 });

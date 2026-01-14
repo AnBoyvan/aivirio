@@ -8,13 +8,22 @@
  * @module
  */
 
+import type * as _files_createFile from "../_files/createFile.js";
+import type * as _files_createFolder from "../_files/createFolder.js";
+import type * as _files_getFile from "../_files/getFile.js";
+import type * as _files_getFiles from "../_files/getFiles.js";
+import type * as _files_getFolderContents from "../_files/getFolderContents.js";
+import type * as _files_remove from "../_files/remove.js";
+import type * as _files_rename from "../_files/rename.js";
+import type * as _files_update from "../_files/update.js";
+import type * as _projects_create from "../_projects/create.js";
+import type * as _projects_get from "../_projects/get.js";
+import type * as _projects_getById from "../_projects/getById.js";
+import type * as _projects_getPartial from "../_projects/getPartial.js";
+import type * as _projects_rename from "../_projects/rename.js";
 import type * as auth from "../auth.js";
+import type * as files from "../files.js";
 import type * as projects from "../projects.js";
-import type * as projects_handlers_createProject from "../projects/handlers/createProject.js";
-import type * as projects_handlers_getProjectById from "../projects/handlers/getProjectById.js";
-import type * as projects_handlers_getProjects from "../projects/handlers/getProjects.js";
-import type * as projects_handlers_getProjectsPartial from "../projects/handlers/getProjectsPartial.js";
-import type * as projects_handlers_renameProject from "../projects/handlers/renameProject.js";
 
 import type {
   ApiFromModules,
@@ -23,13 +32,22 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  "_files/createFile": typeof _files_createFile;
+  "_files/createFolder": typeof _files_createFolder;
+  "_files/getFile": typeof _files_getFile;
+  "_files/getFiles": typeof _files_getFiles;
+  "_files/getFolderContents": typeof _files_getFolderContents;
+  "_files/remove": typeof _files_remove;
+  "_files/rename": typeof _files_rename;
+  "_files/update": typeof _files_update;
+  "_projects/create": typeof _projects_create;
+  "_projects/get": typeof _projects_get;
+  "_projects/getById": typeof _projects_getById;
+  "_projects/getPartial": typeof _projects_getPartial;
+  "_projects/rename": typeof _projects_rename;
   auth: typeof auth;
+  files: typeof files;
   projects: typeof projects;
-  "projects/handlers/createProject": typeof projects_handlers_createProject;
-  "projects/handlers/getProjectById": typeof projects_handlers_getProjectById;
-  "projects/handlers/getProjects": typeof projects_handlers_getProjects;
-  "projects/handlers/getProjectsPartial": typeof projects_handlers_getProjectsPartial;
-  "projects/handlers/renameProject": typeof projects_handlers_renameProject;
 }>;
 
 /**

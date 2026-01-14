@@ -1,20 +1,19 @@
 import { useMutation } from 'convex/react';
 
 import { api } from '@/convex/_generated/api';
-import type { Id } from '@/convex/_generated/dataModel';
 
-export const useRenameProject = (projectId: Id<'projects'>) => {
+export const useRenameProject = () => {
 	return useMutation(api.projects.rename).withOptimisticUpdate(
 		(localStore, args) => {
 			const existingProject = localStore.getQuery(api.projects.getById, {
-				id: projectId,
+				id: args.id,
 			});
 
 			if (existingProject !== undefined && existingProject !== null) {
 				localStore.setQuery(
 					api.projects.getById,
 					{
-						id: projectId,
+						id: args.id,
 					},
 					{
 						...existingProject,
