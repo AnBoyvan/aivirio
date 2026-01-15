@@ -4,4 +4,5 @@ import { api } from '@/convex/_generated/api';
 
 export const useRemoveFile = () => {
 	return useMutation(api.files.remove);
+	// TODO: Add optimistic mutation
 };

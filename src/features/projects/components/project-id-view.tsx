@@ -12,6 +12,8 @@ import { ProjectIdViewTab } from './project-id-view-tab';
 
 import 'allotment/dist/style.css';
 
+import { EditorView } from '@/features/editor/components/editor-view';
+
 import { FileExplorer } from '../../files/components/file-explorer';
 
 const MIN_SIDEBAR_WIDTH = 200;
@@ -63,7 +65,7 @@ export const ProjectIdView = ({ projectId }: ProjectIdViewProps) => {
 							<FileExplorer projectId={projectId} />
 						</Allotment.Pane>
 						<Allotment.Pane>
-							<p>Editor view</p>
+							<EditorView projectId={projectId} />
 						</Allotment.Pane>
 					</Allotment>
 				</div>

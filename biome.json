@@ -57,6 +57,9 @@
 			},
 			"performance": {
 				"noImgElement": "off"
+			},
+			"complexity": {
+				"useOptionalChain": "off"
 			}
 		},
 		"domains": {

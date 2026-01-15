@@ -4,6 +4,7 @@ import { FileIcon, FolderIcon } from '@react-symbols/icons/utils';
 import { ChevronRightIcon } from 'lucide-react';
 
 import type { Doc, Id } from '@/convex/_generated/dataModel';
+import { useEditor } from '@/features/editor/hooks/use-editor';
 import { cn } from '@/lib/utils/cn';
 
 import { useCreateFile } from '../../hooks/use-create-file';
@@ -28,6 +29,7 @@ export const Tree = ({ item, level = 0, projectId }: TreeProps) => {
 	const createFolder = useCreateFolder();
 	const renameFile = useRenameFile();
 	const removeFile = useRemoveFile();
+	const { openFile, closeTab, activeTabId } = useEditor(projectId);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [isRenaming, setIsRenaming] = useState(false);
@@ -75,13 +77,14 @@ export const Tree = ({ item, level = 0, projectId }: TreeProps) => {
 
 	if (item.type === 'file') {
 		const fileName = item.name;
+		const isActive = activeTabId === item._id;
 
 		if (isRenaming) {
 			return (
 				<RenameInput
 					level={level}
 					type="file"
-					defaultValue={item.name}
+					defaultValue={fileName}
 					onSubmit={handleRename}
 					onCancel={() => setIsRenaming(false)}
 				/>
@@ -92,12 +95,12 @@ export const Tree = ({ item, level = 0, projectId }: TreeProps) => {
 			<TreeItemWrapper
 				item={item}
 				level={level}
-				isActive={false}
-				onClick={() => {}}
-				onDoubleClick={() => {}}
+				isActive={isActive}
+				onClick={() => openFile(item._id, { pinned: false })}
+				onDoubleClick={() => openFile(item._id, { pinned: true })}
 				onRename={() => setIsRenaming(true)}
 				onDelete={() => {
-					// TODO: Close tab
+					closeTab(item._id);
 					removeFile({ id: item._id });
 				}}
 			>
@@ -194,7 +197,13 @@ export const Tree = ({ item, level = 0, projectId }: TreeProps) => {
 				onClick={() => setIsOpen(value => !value)}
 				onRename={() => setIsRenaming(true)}
 				onDelete={() => {
-					// TODO: Close tab
+					if (folderContents) {
+						folderContents.forEach(file => {
+							if (file.type === 'file') {
+								closeTab(file._id);
+							}
+						});
+					}
 					removeFile({ id: item._id });
 				}}
 				onCreateFile={() => startCreating('file')}

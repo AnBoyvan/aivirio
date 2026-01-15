@@ -11,6 +11,7 @@
 import type * as _files_createFile from "../_files/createFile.js";
 import type * as _files_createFolder from "../_files/createFolder.js";
 import type * as _files_getFile from "../_files/getFile.js";
+import type * as _files_getFilePath from "../_files/getFilePath.js";
 import type * as _files_getFiles from "../_files/getFiles.js";
 import type * as _files_getFolderContents from "../_files/getFolderContents.js";
 import type * as _files_remove from "../_files/remove.js";
@@ -35,6 +36,7 @@ declare const fullApi: ApiFromModules<{
   "_files/createFile": typeof _files_createFile;
   "_files/createFolder": typeof _files_createFolder;
   "_files/getFile": typeof _files_getFile;
+  "_files/getFilePath": typeof _files_getFilePath;
   "_files/getFiles": typeof _files_getFiles;
   "_files/getFolderContents": typeof _files_getFolderContents;
   "_files/remove": typeof _files_remove;
