@@ -1,9 +1,0 @@
-packages:
-  - .
-
-ignoredBuiltDependencies:
-  - '@clerk/shared'
-  - '@sentry/cli'
-  - esbuild
-  - sharp
-  - unrs-resolver
