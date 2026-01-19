@@ -16,6 +16,8 @@ import { ThemeProvider } from 'next-themes';
 import { AuthLoadingView } from '@/features/auth/components/auth-loading-view';
 import { UnauthenticatedView } from '@/features/auth/components/unauthenticated-view';
 
+import { Toaster } from './ui/sonner';
+
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL);
 
 export const Providers = ({ children }: { children: ReactNode }) => {
@@ -32,6 +34,7 @@ export const Providers = ({ children }: { children: ReactNode }) => {
 					enableSystem
 					disableTransitionOnChange
 				>
+					<Toaster theme="dark" />
 					<Authenticated>{children}</Authenticated>
 					<Unauthenticated>
 						<UnauthenticatedView />
