@@ -6,7 +6,7 @@ import type { Id } from '@/convex/_generated/dataModel';
 
 import { Navbar } from './navbar';
 
-import 'allotment/dist/style.css';
+import { ConversationSidebar } from '@/features/conversations/components/conversation-sidebar';
 
 interface ProjectIdLayoutProps {
 	children: React.ReactNode;
@@ -36,7 +36,7 @@ export const ProjectIdLayout = ({
 						maxSize={MAX_SIDEBAR_WIDTH}
 						preferredSize={DEFAULT_CONVERSATION_SIDEBAR_WIDTH}
 					>
-						<div>Conversation sidebar</div>
+						<ConversationSidebar projectId={projectId} />
 					</Allotment.Pane>
 					<Allotment.Pane>{children}</Allotment.Pane>
 				</Allotment>

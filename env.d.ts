@@ -16,6 +16,7 @@ declare global {
 			// Convex
 			CONVEX_DEPLOYMENT: string;
 			NEXT_PUBLIC_CONVEX_URL: string;
+			CONVEX_INTERNAL_KEY?: string;
 
 			// Anthropic
 			ANTHROPIC_API_KEY: sting;

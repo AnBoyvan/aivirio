@@ -2,9 +2,9 @@
 
 import type * as React from 'react';
 
-import { cn } from '@/lib/utils/cn';
-
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
+
+import { cn } from '@/lib/utils/cn';
 
 function Avatar({
 	className,
