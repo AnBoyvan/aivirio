@@ -26,6 +26,7 @@ import type * as _projects_get from "../_projects/get.js";
 import type * as _projects_getById from "../_projects/getById.js";
 import type * as _projects_getPartial from "../_projects/getPartial.js";
 import type * as _projects_rename from "../_projects/rename.js";
+import type * as _projects_updateSettings from "../_projects/updateSettings.js";
 import type * as _requests_cleanup from "../_requests/cleanup.js";
 import type * as _requests_createBinaryFile from "../_requests/createBinaryFile.js";
 import type * as _requests_createFile from "../_requests/createFile.js";
@@ -81,6 +82,7 @@ declare const fullApi: ApiFromModules<{
   "_projects/getById": typeof _projects_getById;
   "_projects/getPartial": typeof _projects_getPartial;
   "_projects/rename": typeof _projects_rename;
+  "_projects/updateSettings": typeof _projects_updateSettings;
   "_requests/cleanup": typeof _requests_cleanup;
   "_requests/createBinaryFile": typeof _requests_createBinaryFile;
   "_requests/createFile": typeof _requests_createFile;
