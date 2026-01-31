@@ -6,6 +6,7 @@ import { generateText, Output } from 'ai';
 
 import { SUGGESTION_PROMPT } from '@/features/editor/prompts/suggestion-prompt';
 import { suggestionSchema } from '@/features/editor/schemas/suggestion-schema';
+import { ANTHROPIC_HAIKU_MODEL } from '@/lib/constants';
 
 export async function POST(request: Request) {
 	try {
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
 			.replace('{lineNumber}', lineNumber.toString());
 
 		const { output } = await generateText({
-			model: anthropic('claude-3-haiku-20240307'),
+			model: anthropic(ANTHROPIC_HAIKU_MODEL),
 			output: Output.object({ schema: suggestionSchema }),
 			prompt,
 		});

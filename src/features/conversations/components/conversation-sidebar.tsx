@@ -18,7 +18,6 @@ import {
 	PromptInputTools,
 } from '@/components/ai-elements/prompt-input';
 import type { Id } from '@/convex/_generated/dataModel';
-import { DEFAULT_CONVERSATION_TITLE } from '@/convex/constants';
 
 import { useConversation } from '../hooks/use-conversation';
 import { useConversations } from '../hooks/use-conversations';
@@ -26,6 +25,7 @@ import { useCreateConversation } from '../hooks/use-create-conversation';
 import { useMessages } from '../hooks/use-messages';
 import { ConversationMessage } from './conversation-message';
 import { ConversationSidebarHeader } from './conversation-sidebar-header';
+import { DEFAULT_CONVERSATION_TITLE } from '../constants';
 
 interface ConversationSidebarProps {
 	projectId: Id<'projects'>;
@@ -65,9 +65,18 @@ export const ConversationSidebar = ({
 		}
 	};
 
+	const handleCancel = async () => {
+		try {
+			await ky.post('/api/messages/cancel', { json: { projectId } });
+		} catch {
+			toast.error('Unable to cancel request');
+			return null;
+		}
+	};
+
 	const handleSubmit = async (message: PromptInputMessage) => {
 		if (isProcessing && !message.text) {
-			// TODO: handleCancel()
+			await handleCancel();
 			setInput('');
 			return;
 		}
@@ -101,6 +110,7 @@ export const ConversationSidebar = ({
 				projectId={projectId}
 				title={activeConversation?.title ?? DEFAULT_CONVERSATION_TITLE}
 				onCreate={handleCreateConversation}
+				onSelect={conversationId => setSelectedConversationId(conversationId)}
 			/>
 			<Conversation className="flex-1">
 				<ConversationContent>

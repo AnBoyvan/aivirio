@@ -1,0 +1,11 @@
+export const DEFAULT_CONVERSATION_TITLE = 'New conversation';
+
+export const RECENT_MESSAGES_LIMIT = 10;
+
+export const TITLE_GENERATION_TEMPERATURE = 0;
+export const TITLE_GENERATION_MAX_TOKENS = 50;
+
+export const CODE_GENERATION_TEMPERATURE = 0.3;
+export const CODE_GENERATION_MAX_TOKENS = 4096;
+
+export const NETWORK_MAX_ITERATIONS = 20;

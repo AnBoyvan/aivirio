@@ -8,6 +8,7 @@ import { URL_REGEX } from '@/features/editor/constants';
 import { QUICK_EDIT_PROMPT } from '@/features/editor/prompts/quick-edit-prompt';
 import { quickEditSchema } from '@/features/editor/schemas/quick-edit-schema';
 import { firecrawl } from '@/lib/firecrawl/firecrawl';
+import { ANTHROPIC_HAIKU_MODEL } from '@/lib/constants';
 
 export async function POST(request: Request) {
 	try {
@@ -67,7 +68,7 @@ export async function POST(request: Request) {
 			.replace('{documentation}', documentationContext);
 
 		const { output } = await generateText({
-			model: anthropic('claude-3-haiku-20240307'),
+			model: anthropic(ANTHROPIC_HAIKU_MODEL),
 			output: Output.object({ schema: quickEditSchema }),
 			prompt,
 		});

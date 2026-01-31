@@ -31,6 +31,10 @@ export const ConversationMessage = ({
 						<LoaderIcon className="size-4 animate-spin" />
 						<span>Thinking...</span>
 					</div>
+				) : message.status === 'cancelled' ? (
+					<span className="pr-1 text-muted-foreground italic">
+						Request cancelled
+					</span>
 				) : (
 					<MessageResponse>{message.content}</MessageResponse>
 				)}
