@@ -17,6 +17,7 @@ import { Kbd } from '@/components/ui/kbd';
 import { cn } from '@/lib/utils/cn';
 
 import { useCreateProject } from '../hooks/use-create-project';
+import { ImportGithubDialog } from './import-github-dialog';
 import { ProjectsCommandDialog } from './projects-command-dialog';
 import { ProjectsList } from './projects-list';
 
@@ -29,11 +30,34 @@ export const ProjectsView = () => {
 	const createProject = useCreateProject();
 
 	const [commandDialogOpen, setCommandDialogOpen] = useState(false);
+	const [importDialogOpen, setImportDialogOpen] = useState(false);
+
+	const handleCreateProject = () => {
+		const projectName = uniqueNamesGenerator({
+			dictionaries: [adjectives, animals, colors],
+			separator: '-',
+			length: 3,
+		});
+
+		createProject({
+			name: projectName,
+		});
+	};
 
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.metaKey || e.ctrlKey) {
-				if (e.key === 'K' || e.key === 'k' || e.key === 'л' || e.key === 'Л') {
+				if (e.key === 'J' || e.key === 'j' || e.key === 'О' || e.key === 'о') {
+					e.preventDefault();
+					handleCreateProject();
+				}
+
+				if (e.key === 'I' || e.key === 'i' || e.key === 'Ш' || e.key === 'ш') {
+					e.preventDefault();
+					setImportDialogOpen(true);
+				}
+
+				if (e.key === 'K' || e.key === 'k' || e.key === 'Л' || e.key === 'л') {
 					e.preventDefault();
 					setCommandDialogOpen(true);
 				}
@@ -50,6 +74,10 @@ export const ProjectsView = () => {
 			<ProjectsCommandDialog
 				open={commandDialogOpen}
 				onOpenChange={setCommandDialogOpen}
+			/>
+			<ImportGithubDialog
+				open={importDialogOpen}
+				onOpenChange={setImportDialogOpen}
 			/>
 			<div className="flex min-h-screen flex-col items-center justify-center bg-sidebar p-6 md:p-16">
 				<div className="mx-auto flex w-full max-w-sm flex-col items-center gap-4">
@@ -74,17 +102,7 @@ export const ProjectsView = () => {
 						<div className="grid grid-cols-2 gap-2">
 							<Button
 								variant="outline"
-								onClick={() => {
-									const projectName = uniqueNamesGenerator({
-										dictionaries: [adjectives, animals, colors],
-										separator: '-',
-										length: 3,
-									});
-
-									createProject({
-										name: projectName,
-									});
-								}}
+								onClick={() => handleCreateProject()}
 								className="flex h-full flex-col items-start justify-start gap-6 rounded-none border bg-background p-4"
 							>
 								<div className="flex w-full items-center justify-between">
@@ -97,7 +115,7 @@ export const ProjectsView = () => {
 							</Button>
 							<Button
 								variant="outline"
-								onClick={() => {}}
+								onClick={() => setImportDialogOpen(true)}
 								className="flex h-full flex-col items-start justify-start gap-6 rounded-none border bg-background p-4"
 							>
 								<div className="flex w-full items-center justify-between">

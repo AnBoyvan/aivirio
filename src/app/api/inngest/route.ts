@@ -1,9 +1,11 @@
 import { serve } from 'inngest/next';
 
 import { processMessage } from '@/features/conversations/inngest/process-message';
+import { exportToGithub } from '@/features/projects/inngest/export-to-github';
+import { importGithubRepo } from '@/features/projects/inngest/import-github-repo';
 import { inngest } from '@/lib/inngest/client';
 
 export const { GET, POST, PUT } = serve({
 	client: inngest,
-	functions: [processMessage],
+	functions: [processMessage, importGithubRepo, exportToGithub],
 });

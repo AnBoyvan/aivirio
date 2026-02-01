@@ -35,7 +35,8 @@
 				"noStaticElementInteractions": "off"
 			},
 			"style": {
-				"useImportType": "warn"
+				"useImportType": "warn",
+				"noNonNullAssertion": "off"
 			},
 			"suspicious": {
 				"noUnknownAtRules": "off",
@@ -43,7 +44,8 @@
 				"noExplicitAny": "warn",
 				"noDoubleEquals": "off",
 				"noArrayIndexKey": "off",
-				"noDocumentCookie": "off"
+				"noDocumentCookie": "off",
+				"useIterableCallbackReturn": "off"
 			},
 			"correctness": {
 				"noUnusedImports": "warn",

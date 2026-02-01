@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 import { Allotment } from 'allotment';
-import { FaGithub } from 'react-icons/fa';
 
 import type { Id } from '@/convex/_generated/dataModel';
 import { cn } from '@/lib/utils/cn';
@@ -15,6 +14,7 @@ import 'allotment/dist/style.css';
 import { EditorView } from '@/features/editor/components/editor-view';
 
 import { FileExplorer } from '../../files/components/file-explorer';
+import { ExportPopover } from './export-popover';
 import { PreviewView } from './preview-view';
 
 const MIN_SIDEBAR_WIDTH = 200;
@@ -43,10 +43,7 @@ export const ProjectIdView = ({ projectId }: ProjectIdViewProps) => {
 					onClick={() => setActiveView('preview')}
 				/>
 				<div className="flex h-full flex-1 justify-end">
-					<div className="flex h-full cursor-pointer items-center gap-1.5 border-l px-3 text-muted-foreground hover:bg-accent/30">
-						<FaGithub className="size-3.5" />
-						<span className="text-sm">Export</span>
-					</div>
+					<ExportPopover projectId={projectId} />
 				</div>
 			</nav>
 			<div className="relative flex-1">
