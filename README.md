@@ -22,7 +22,7 @@
 
 - [Why Aivirio Exists](#why-aivirio-exists)
 - [Core Capabilities](#core-capabilities)
-- [Screenshots & Demo](#screenshots)
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
 - [Environment Variables](#environment-variables)
