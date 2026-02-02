@@ -1,8 +1,8 @@
 
-<h1 align="center">
-<img src="docs/media/logo.png" />
-<span>Aivirio</span>
-</h1>
+<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 16px; ">
+<img src="docs/media/logo.png" width="96" height="96" />
+<h1 style="font-size: 72px;">Aivirio</h1>
+</div>
 
 <p align="center">
   <b>AI-powered development environment that can understand, edit, run, and sync entire projects — directly in the browser.</b>
@@ -60,11 +60,21 @@ Most AI tools help you write code.
 
 ## 🎥 Screenshots
 
-> Replace these placeholders with real GIFs or screenshots from your app.
+<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<p>Projects list</p>
+<img src="docs/media/projects.png" width="900" />
+</div>
 
-| Editor + Preview | AI Editing Files | GitHub Import | WebContainer Terminal |
-|------------------|------------------|---------------|------------------------|
-| ![](docs/media/editor-preview.gif) | ![](docs/media/ai-edit.gif) | ![](docs/media/github-import.gif) | ![](docs/media/terminal.gif) |
+<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<p>Editor</p>
+<img src="docs/media/editor.png" width="900" />
+</div>
+
+<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<p>Preview</p>
+<img src="docs/media/preview.png" width="900" />
+</div>
+
 
 ---
 
