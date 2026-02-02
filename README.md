@@ -1,5 +1,5 @@
 
-<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: row; gap: 16px; ">
+<div align="center">
 <img src="docs/media/logo.png" width="96" height="96" />
 <h1 style="font-size: 72px;">Aivirio</h1>
 </div>
@@ -60,17 +60,17 @@ Most AI tools help you write code.
 
 ## 🎥 Screenshots
 
-<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<div align="center">
 <p>Projects list</p>
 <img src="docs/media/projects.png" width="900" />
 </div>
 
-<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<div align="center">
 <p>Editor</p>
 <img src="docs/media/editor.png" width="900" />
 </div>
 
-<div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 16px; ">
+<div align="center">
 <p>Preview</p>
 <img src="docs/media/preview.png" width="900" />
 </div>
