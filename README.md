@@ -18,7 +18,7 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Why Aivirio Exists](#why-aivirio-exists)
 - [Core Capabilities](#core-capabilities)
@@ -34,7 +34,7 @@
 
 ---
 
-## ✨ Why Aivirio Exists
+## Why Aivirio Exists
 
 Most AI tools help you write code.
 
@@ -48,7 +48,7 @@ Most AI tools help you write code.
 
 ---
 
-## 🛠️ Core Capabilities
+## Core Capabilities
 
 - Import existing GitHub repositories into a live workspace
 - AI-powered file creation, editing, and refactoring
@@ -59,7 +59,7 @@ Most AI tools help you write code.
 
 ---
 
-## 🎥 Screenshots
+## Screenshots
 
 <div align="center">
 <p>Projects list</p>
@@ -79,7 +79,7 @@ Most AI tools help you write code.
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 - **Next.js (App Router)** + React + TypeScript
 - **Convex** — realtime backend & data layer
@@ -92,7 +92,7 @@ Most AI tools help you write code.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 git clone https://github.com/AnBoyvan/aivirio.git
@@ -105,7 +105,7 @@ You will need accounts for: Clerk, Convex, Anthropic, Inngest, GitHub OAuth.
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create a `.env.local` file:
 
@@ -126,7 +126,7 @@ INNGEST_SIGNING_KEY=
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. Files are stored in Convex
 2. AI agent accesses files through tools
@@ -138,7 +138,7 @@ For deep technical details see: `docs/architecture.md`
 
 ---
 
-## 🧪 Development
+## Development
 
 ```bash
 npm run dev
@@ -150,13 +150,13 @@ Formatting and linting via **Biome**.
 
 ---
 
-## ℹ️ About this project
+## About this project
 
 This repository is a portfolio demonstration.
 
 See: `docs/description.md`
 
-## 📚 Documentation
+## Documentation
 
 Full technical documentation and architecture breakdown:  
 `docs/architecture.md`
