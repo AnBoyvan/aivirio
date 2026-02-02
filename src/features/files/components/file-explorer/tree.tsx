@@ -27,8 +27,8 @@ interface TreeProps {
 export const Tree = ({ item, level = 0, projectId }: TreeProps) => {
 	const createFile = useCreateFile();
 	const createFolder = useCreateFolder();
-	const renameFile = useRenameFile();
-	const removeFile = useRemoveFile();
+	const renameFile = useRenameFile({ projectId, parentId: item.parentId });
+	const removeFile = useRemoveFile({ projectId, parentId: item.parentId });
 	const { openFile, closeTab, activeTabId } = useEditor(projectId);
 
 	const [isOpen, setIsOpen] = useState(false);
