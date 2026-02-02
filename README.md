@@ -20,16 +20,17 @@
 
 ## 📑 Table of Contents
 
-- [Why Aivirio Exists](#-why-aivirio-exists)
-- [Core Capabilities](#-core-capabilities)
-- [Screenshots & Demo](#-screenshots--demo)
-- [Tech Stack](#-tech-stack)
-- [Quick Start](#-quick-start)
-- [Environment Variables](#-environment-variables)
-- [How It Works](#-how-it-works)
-- [Development](#-development)
-- [Documentation](#-documentation)
-- [License](#-license)
+- [Why Aivirio Exists](#why-aivirio-exists)
+- [Core Capabilities](#core-capabilities)
+- [Screenshots & Demo](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Environment Variables](#environment-variables)
+- [How It Works](#how-it-works)
+- [Development](#development)
+- [About this project](#about-this-project)
+- [Documentation](#documentation)
+
 
 ---
 
