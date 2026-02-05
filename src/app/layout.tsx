@@ -26,8 +26,61 @@ export const metadata: Metadata = {
 	},
 	title: {
 		default: 'Aivirio',
-		template: 'Aivirio',
+		template: '%s · Aivirio',
 	},
+	description:
+		'AI-powered, browser-first web development workspace. Combines AI-assisted code editing, GitHub integration, and in-browser runtimes for rapid prototyping, live previews, and reduced setup friction.',
+
+	keywords: [
+		'AI development workspace',
+		'browser-based IDE',
+		'AI code editor',
+		'web development platform',
+		'in-browser runtime',
+		'GitHub integration',
+		'rapid prototyping',
+		'developer tools',
+	],
+	applicationName: 'Aivirio',
+	creator: 'Andrii Boyvan',
+	openGraph: {
+		type: 'website',
+		siteName: 'Aivirio',
+		title: 'Aivirio — AI-Powered Web Development Workspace',
+		description:
+			'AI-powered, browser-first web development workspace for rapid prototyping with AI-assisted code editing, GitHub integration, and live in-browser runtimes.',
+		url: '/',
+		images: [
+			{
+				url: '/opengraph-image.png',
+				width: 1200,
+				height: 630,
+				alt: 'Aivirio — AI-Powered Web Development Workspace',
+			},
+		],
+	},
+
+	twitter: {
+		card: 'summary_large_image',
+		title: 'Aivirio — AI-Powered Web Development Workspace',
+		description:
+			'Browser-first AI development workspace with live previews, GitHub integration, and in-browser runtimes.',
+		images: ['/twitter-image.png'],
+	},
+
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
+		},
+	},
+
+	category: 'technology',
 };
 
 export default function RootLayout({
