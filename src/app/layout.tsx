@@ -7,6 +7,8 @@ import 'allotment/dist/style.css';
 import { Providers } from '@/components/providers';
 
 import favicon from '../../public/favicon.ico';
+import ogImage from '../../public/opengraph-image.png';
+import twitterImage from '../../public/twitter-image.png';
 
 const inter = Inter({
 	variable: '--font-inter',
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
 		url: '/',
 		images: [
 			{
-				url: '/opengraph-image.png',
+				url: ogImage.src,
 				width: 1200,
 				height: 630,
 				alt: 'Aivirio — AI-Powered Web Development Workspace',
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
 		title: 'Aivirio — AI-Powered Web Development Workspace',
 		description:
 			'Browser-first AI development workspace with live previews, GitHub integration, and in-browser runtimes.',
-		images: ['/twitter-image.png'],
+		images: [twitterImage.src],
 	},
 
 	robots: {
